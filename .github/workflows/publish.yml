@@ -3,11 +3,6 @@ name: publish
 on:
   push:
     tags:
-      -'v*.*.*'name: Publish NuGet Package
-
-on:
-  push:
-    tags:
       - 'v*.*.*'  # Trigger on version tags like v1.0.0
 
 jobs:
