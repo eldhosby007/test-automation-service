@@ -12,5 +12,6 @@
   <files>
     <!-- Include the built DLL in the NuGet package -->
     <file src="bin\Release\*.dll" target="lib\net48" />
+	<file src="bin\Release\TestAutomationService.exe" target="tools" />
   </files>
 </package>
