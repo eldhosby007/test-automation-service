@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TestAutomationService</id>               <!-- Unique NuGet package ID -->
+    <version>1.0.0</version>                      <!-- Can be overridden via GitHub Actions if needed -->
+    <authors>YourName</authors>
+    <owners>YourCompany</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Automation library for internal use</description>
+    <tags>automation testing internal</tags>
+  </metadata>
+  <files>
+    <!-- Include the built DLL in the NuGet package -->
+    <file src="D:\Net core Projects\TestAutomationService\bin\Debug\TestAutomationService.exe" target="tools" />
+  </files>
+</package>
