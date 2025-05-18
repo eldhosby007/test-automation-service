@@ -3,24 +3,28 @@ name: Build and Push NuGet Package (.NET Framework 4.8)
 on:
   push:
     tags:
-      - 'v*'  # Triggers on version tags like v1.0.0
+      - "v*" # Triggers on version tags like v1.0.0
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1
+      - name: Confirm NuGet availability
+        run: nuget help
 
-    - name: Restore packages
-      run: nuget restore TestAutomationService.sln
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1
 
-    - name: Build project
-      run: msbuild TestAutomationService/TestAutomationService.csproj /p:Configuration=Release
+      - name: Restore packages
+        run: nuget restore TestAutomationService.sln
 
-    - name: Pack NuGet package
-      run: nuget pack TestAutomationService.nuspec -OutputDirectory ./nupkg
+      - name: Build project
+        run: |
+          "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe" TestAutomationService/TestAutomationService.csproj /p:Configuration=Release
+
+      - name: Pack NuGet package
+        run: nuget pack TestAutomationService.nuspec -OutputDirectory ./nupkg
