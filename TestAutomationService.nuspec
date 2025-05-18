@@ -11,6 +11,6 @@
   </metadata>
   <files>
     <!-- Include the built DLL in the NuGet package -->
-    <file src="D:\Net core Projects\TestAutomationService\bin\Debug\TestAutomationService.exe" target="tools" />
+    <file src="D:\Test-Automation-service\test-automation-service\bin\Debug\TestAutomationService.exe" target="tools" />
   </files>
 </package>
